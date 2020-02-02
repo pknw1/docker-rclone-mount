@@ -1,11 +1,22 @@
 ## docker-rclone-mount
+
+using an existing rclone.conf or setting up a new remote, you can run this container to mount your remote filesystem and share it with the host and other containers
+
+* [rclone](https://rclone.org)
+* [encfs](https://github.com/vgough/encfs)
+
+shamelessly coppied from [tynor88](https://github.com/tynor88/docker-rclone-mount)
+
 ## Configuring rclone.conf
+
 ### Copying existing conf
 	mkdir p $(pwd)/config/rclone-mount
 	cp ~/.config/rclone/rclone.conf $(pwd)/config/rclone-mount/.rclone.conf
 
 ### Creating a new conf
-	docker run -it --rm -v $(pwd)/config/rclone-mount:/config pknw1/rclone-mount rclone --config="/config/.rclone.conf" config
+	docker run -it --rm \
+		-v $(pwd)/config/rclone-mount:/config \
+		pknw1/rclone-mount rclone --config="/config/.rclone.conf" config
 
 ## Running a configured instance
 ### docker-cli
