@@ -53,3 +53,8 @@
 	      - /tmp:/tmp
 	      - /etc/localtime:/etc/localtime
 	    restart: unless-stopped
+
+## Further development
+
+* encfs mounting
+* automatically recognise encrypted volumes and mount depending on ENCFS_PASS environment variable
